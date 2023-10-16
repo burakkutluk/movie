@@ -1,0 +1,179 @@
+@import "../../mixin.scss";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    transform: translateY(0);
+    transition: all ease 0.5s;
+
+    &.shrink {
+        background: rgba(0, 0, 0, 0.159);
+
+    }
+
+    .headerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+
+        .logo {
+            height: 100px;
+
+            img {
+                height: 200px;
+                margin-top: -130px;
+
+            }
+        }
+
+        .itemWrapper {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .headerSearchForm {
+            display: flex;
+            align-items: center;
+            width: 30%;
+
+            .visibleSearch {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    border-radius: 10px 0 0 10px;
+                    padding: 10px;
+                    background-color: var(--black);
+                    border: 1px solid rgb(125, 128, 131);
+                    color: #fff;
+                    transition: all ease 0.5s;
+                }
+
+                input:focus {
+                    outline: 3px solid red;
+                }
+
+                .searchIcon {
+                    color: #fff;
+                    cursor: pointer;
+                    position: relative;
+                    background-color: var(--black2);
+                    padding: 10px;
+                    border-radius: 0 10px 10px 0;
+                    border: rgb(125, 128, 131);
+                }
+
+                .searchIconSingle {
+                    color: #fff;
+                    cursor: pointer;
+                    background-color: var(--black2);
+                    padding: 10px;
+                    border-radius: 0 10px 10px 0;
+                    border: rgb(125, 128, 131);
+                }
+
+                .searchIcon:hover {
+                    background-color: rgb(43, 45, 47);
+                }
+            }
+        }
+
+        .menuItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-right: 40px;
+
+            .searchIcon {
+                cursor: pointer;
+                color: #fff;
+                
+            }
+
+            .menuIcon {
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+
+        .headerItems {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+
+            .item {
+                color: rgba(240, 248, 255, 0.884);
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+
+                @include md {
+                    font-size: 20px;
+                }
+            }
+
+            .item:hover {
+                color: aliceblue;
+            }
+        }
+
+    }
+
+    .navMenuItems {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        float: left;
+        width: 25%;
+        list-style: none;
+
+        .item {
+            color: #ffffffe8;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            padding: 20px;
+        }
+    }
+
+    .searchOpen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 65%;
+        top: 15px;
+        right: 45px;
+        .searchOpenInput{
+            width: 100%;
+            padding: 10px;
+            padding-left: 35px;
+            background-color: #3c3939;
+            color: #ffffff;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            
+        }
+        .searchIcon{
+            position: absolute;
+            left: 7px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .searchOpenInput::placeholder{
+            color: #fff;
+        }
+    }
+}

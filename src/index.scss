@@ -1,0 +1,25 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --black: #242730;
+    --black2: #121924a3;
+    --black3: #020c1b;
+    --black-lighter: #1c4b91;
+    --black-light: #173d77;
+    --pink: #5705af;
+    --orange: #f89e00;
+    --gradient: linear-gradient(98.37deg, #ee0303 0.99%, #6600ff 100%);
+}
+
+body{
+    background-color: var(--black);
+    margin: 0;
+    height: 1000vh;
+}

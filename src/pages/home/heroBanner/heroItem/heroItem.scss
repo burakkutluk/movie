@@ -1,0 +1,70 @@
+@import "../../../../mixin.scss";
+
+.heroItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+
+    @include md {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .poster {
+        margin-top: 500px;
+        @include md{
+            margin-top: 0;
+        }
+        img {
+            width: 300px;
+            border-radius: 20px;
+        }
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 450px;
+        margin-top: 70px;
+
+        .title {
+            color: aliceblue;
+            position: relative;
+            font-weight: 600;
+            font-size: 40px;
+        }
+
+        .overview {
+            color: aliceblue;
+            line-height: 25px;
+            margin-top: 50px;
+            font-size: 20px;
+            width: 70%;
+            overflow: hidden;
+            max-height: 150px;
+
+        }
+        .trailerBtn{
+            margin-top: 50px;
+            width: max-content;
+            button{
+                cursor: pointer;
+                height: 40px;
+                width: 150px;
+                border-radius: 20px;
+                background: var(--gradient);
+                color: aliceblue;
+                font-size: 15px;
+                border: none;
+                
+            }
+            button:hover{
+                box-shadow: 0 0 10px rgba(253, 253, 253, 0.236);
+            }
+        }
+    }
+}

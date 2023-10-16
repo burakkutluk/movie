@@ -1,0 +1,82 @@
+@import "../../mixin.scss";
+
+.searchContainer {
+    margin-top: 100px;
+    display: flex;
+
+    h1{
+        color: rgba(240, 248, 255, 0.83);
+    }
+    .searchResult {
+        display: flex;
+        gap: 25px;
+        padding: 20px;
+        color: rgba(240, 248, 255, 0.938);
+
+
+        img {
+            width: 150px;
+            border-radius: 20px;
+            height: 300px;
+
+            @include md {
+                width: 25%;
+                height: 100%;
+            }
+        }
+
+        .desc {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 15px;
+
+            .title {
+                font-size: 30px;
+                font-weight: 600;
+
+                @include md {
+                    font-size: 40px;
+                    font-weight: 600;
+                }
+
+                span {
+                    font-size: 20px;
+                    opacity: 0.5;
+                    padding-left: 5px;
+                }
+            }
+
+            .overview {
+                line-height: 25px;
+                font-size: 20px;
+                overflow: hidden;
+                max-height: 100px;
+            }
+
+            .genreWrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: left;
+                gap: 2px;
+
+                span {
+                    opacity: 0.5;
+                }
+            }
+
+            .vote {
+                width: 80px;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background-color: rgba(0, 0, 0, 0.197);
+            }
+        }
+    }
+}

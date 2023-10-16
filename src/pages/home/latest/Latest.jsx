@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import React from 'react'
 import apiFilter, { movieType, tvType } from '../../../api/apiFilter'
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper'
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs'
 import Slider from '../../../components/slider/Slider'
 
-const Popular = () => {
+const Latest = () => {
 
     const [movies, setMovies] = useState([])
     const [tvShows, setTvShows] = useState([])
@@ -13,7 +14,7 @@ const Popular = () => {
         const getMovies = async () => {
             const params = { page: 1 }
             try {
-                const response = await apiFilter.getMoviesList(movieType.popular, { params })
+                const response = await apiFilter.getMoviesList(movieType.upcoming, { params })
                 setMovies(response.results)
             } catch (error) {
                 throw error;
@@ -22,12 +23,11 @@ const Popular = () => {
         getMovies()
     }, [])
 
-
     useEffect(() => {
         const getTv = async () => {
             const params = { page: 1 }
             try {
-                const response = await apiFilter.getTvList(tvType.popular, { params })
+                const response = await apiFilter.getTvList(tvType.on_the_air, { params })
                 setTvShows(response.results)
             } catch (error) {
                 throw error;
@@ -36,19 +36,20 @@ const Popular = () => {
         getTv()
     }, [])
 
+    console.log(tvShows);
 
     return (
         <div className='sliderSection'>
             <ContentWrapper>
-                <div className="title">Popular</div>
-
+                <div className="title">Latest</div>
+                
                 <SwitchTabs />
 
-                <Slider movies={movies} />
+                <Slider movieType={movieType.latest} movies={movies} />
 
             </ContentWrapper>
         </div>
     )
 }
 
-export default Popular
+export default Latest

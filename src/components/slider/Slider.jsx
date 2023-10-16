@@ -3,26 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import ContentWrapper from '../contentWrapper/ContentWrapper'
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import apiFilter, { movieType } from '../../api/apiFilter'
+import './slider.scss'
+import dayjs from 'dayjs'
+import { AiFillStar } from 'react-icons/ai'
 
-const Slider = () => {
+const Slider = ({ movies }) => {
 
   const navigate = useNavigate()
   const carouselContainer = useRef(null);
-  const [movies, setMovies] = useState([])
-
-  useEffect(() => {
-    const getMovies = async () => {
-      const params = { page: 1 }
-      try {
-        const response = await apiFilter.getMoviesList(movieType.popular, { params })
-        setMovies(response.results)
-        console.log(movies)
-      } catch (error) {
-        throw error;
-      }
-    }
-    getMovies()
-  }, [])
 
   const navigation = (dir) => {
     const container = carouselContainer.current;
@@ -42,7 +30,7 @@ const Slider = () => {
   return (
     <div className='slider'>
       <ContentWrapper>
-
+        
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
@@ -53,15 +41,20 @@ const Slider = () => {
           onClick={() => navigation("right")}
         />
 
-        <div className="carouselItems" ref={carouselContainer} >
-          {movies.map((movie) => (
-            <div className="carouselItem" key={movie.id} onClick={() => navigate(`/movie/${movie.id}`)}>
-              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
+        <div className="sliderItems" ref={carouselContainer} >
+          {movies?.map((movie) => (
+            <div className="sliderItem" key={movie.id} onClick={() => navigate(`/details/${movie.id}`)}>
+              <div className="sliderImg">
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
+                <div className='voteAverage'> <AiFillStar color='yellow' /> {movie.vote_average} / <span>10</span> </div>
+              </div>
+              <div className="sliderTitle">
+                {movie.title}
+                <span>{dayjs(movie.release_date).format('YYYY')}</span>
+              </div>
             </div>
-          ))}
 
-          <div className="carouselItem"></div>
-          <div className="carouselItem"></div>
+          ))}
         </div>
 
       </ContentWrapper>

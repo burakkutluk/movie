@@ -6,6 +6,7 @@ import Header from './components/header/Header'
 import Explore from './pages/explore/Explore'
 import Search from './pages/search/Search'
 import Details from './pages/details/Details'
+import NotFound from './pages/404/notFound'
 
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="/search/:query" element={<Search />} />
-        <Route path="/movie/:id" element={<Details />} />
-        <Route path="*" element={<h1>404</h1>} />
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   )
 }
 

@@ -49,7 +49,7 @@ const Search = () => {
                                 </div>
 
                                 <div className="genreWrapper">
-                                    <Genres  movie={movie} />
+                                    <Genres  movie={movie} />                                  
                                 </div>
 
 

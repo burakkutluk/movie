@@ -19,8 +19,7 @@ const Search = () => {
             const params = { query }
 
             try {
-                const searchMovie = await apiFilter.search(  { params });
-
+                const searchMovie = await apiFilter.search( category.movie, { params });
                 setMovies(searchMovie.results);
 
             } catch (error) {
@@ -36,10 +35,10 @@ const Search = () => {
             <ContentWrapper>
                 <div className="searchResults">
                     <h1>Search Results</h1>
-                    {movies.map(movie => (
+                    {movies?.map(movie => (
                         <div className="searchResult" key={movie.id}>
 
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=" " onClick={() => navigate(`/details/${movie.id}`)}/>
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=" " onClick={() => navigate(`/details/${category.movie}/${movie.id}`)}/>
 
                             <div className="desc">
                                 <div className="title">{movie.title || movie.name}

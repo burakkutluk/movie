@@ -8,7 +8,7 @@ const Genres = ({ movie }) => {
     useEffect(() => {
         const getGenres = async () => {
 
-            const params = { page:1 }
+            const params = { page: 1 }
 
             try {
 

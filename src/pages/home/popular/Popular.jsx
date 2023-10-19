@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import apiFilter, { movieType, tvType } from '../../../api/apiFilter'
+import apiFilter, { category, movieType, tvType } from '../../../api/apiFilter'
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper'
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs'
 import Slider from '../../../components/slider/Slider'
@@ -44,7 +44,7 @@ const Popular = () => {
 
                 <SwitchTabs />
 
-                <Slider movies={movies} />
+                <Slider movies={movies} mediaType={category}/>
 
             </ContentWrapper>
         </div>

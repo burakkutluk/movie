@@ -1,0 +1,25 @@
+.castsContainer {
+    margin-top: 10px;
+    margin-left: -20px;
+    .casts {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        .castsItem {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .castsItemImg {
+                width: 100%;
+
+                img {
+                    width: 70%;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+}

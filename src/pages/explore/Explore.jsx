@@ -22,7 +22,7 @@ const Explore = () => {
       if (mediaType == 'movie') {
         response = await apiFilter.getMoviesList(movieType.upcoming, { params });
 
-      } else if (mediaType == 'tvshow') {
+      } else if (mediaType == 'tv') {
         response = await apiFilter.getTvList(tvType.popular, { params });
 
       }
@@ -42,7 +42,7 @@ const Explore = () => {
     if (mediaType == "movie") {
       response = await apiFilter.getMoviesList(movieType.upcoming, { params });
     }
-    else {
+    else{
       response = await apiFilter.getTvList(tvType.popular, { params });
     }
 
@@ -62,7 +62,7 @@ const Explore = () => {
             <div className="cardItem">
               {movies.map((movie) => (
                 <div className='movieItem' key={movie.id}>
-                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" onClick={() => navigate(`/details/${movie.id}`)} />
+                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" onClick={() => navigate(`/details/${mediaType}/${movie.id}`)} />
                   <div className='movieTitle'>{movie.title || movie.name}</div>
                 </div>
               ))}

@@ -1,0 +1,30 @@
+.similar{
+    margin-top: 100px;
+    .item{
+        .title{
+            font-size: 30px;
+            font-weight: 700;
+            color: rgba(240, 248, 255, 0.919);
+        }
+        .arrow{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .carouselLeftNav{
+            width: 5%;
+            float: left;
+            margin-top: 150px;
+            margin-right: 30px;
+        }
+        .carouselRighttNav{
+            width: 5%;
+            float: right;
+            margin-top: 150px;
+            margin-left: 30px;
+        }
+    }
+}

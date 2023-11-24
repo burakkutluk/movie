@@ -4,10 +4,12 @@ import { movieType, category } from '../../../api/apiFilter'
 import './heroBanner.scss'
 import { apiConfig } from '../../../api/apiConfig'
 import HeroItem from './heroItem/HeroItem'
+import { useNavigate } from 'react-router-dom'
 
 const HeroBanner = () => {
 
     const [movies, setMovies] = useState([])
+    
 
     useEffect(() => {
         const getMovies = async () => {
@@ -26,7 +28,7 @@ const HeroBanner = () => {
     return (
         <div className='heroBanner' >
             {movies.map((movie) => (
-                <div className="heroBannerImgContainer" key={movie.id}>
+                <div className="heroBannerImgContainer"  key={movie.id}>
                     <img src={apiConfig.w500Image(movie.backdrop_path)} alt="" />
                 </div>
             ))}

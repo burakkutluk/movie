@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 import './heroItem.scss'
 import { apiConfig } from '../../../../api/apiConfig'
@@ -8,6 +9,7 @@ const HeroItem = ({ movie }) => {
 
     const [show, setShow] = useState(false)
     const [trailer, setTrailer] = useState(null)
+    const navigate = useNavigate()
     
     const handleTrailer = async () => {
         const videos = await apiFilter.getVideos(category.movie, movie.id)
@@ -20,8 +22,8 @@ const HeroItem = ({ movie }) => {
         <>
             <div className='heroItemContainer'>
 
-                <div className="poster">
-                    <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
+                <div className="poster"  >
+                    <img src={apiConfig.w500Image(movie.poster_path)} alt="" onClick={() => navigate(`/details/${category.movie}/${movie.id}`)} />
                 </div>
 
                 <div className="description">

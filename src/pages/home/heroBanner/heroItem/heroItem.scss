@@ -4,12 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    justify-content: center;
+    width: 70%;
 
     @include md {
         display: flex;
         flex-direction: row;
-        align-items: center;
         gap: 20px;
     }
 
@@ -21,6 +21,7 @@
         img {
             width: 300px;
             border-radius: 20px;
+            cursor: pointer;
         }
     }
 
@@ -30,6 +31,7 @@
         position: relative;
         height: 450px;
         margin-top: 70px;
+        width: 100%;
 
         .title {
             color: aliceblue;
@@ -46,7 +48,7 @@
             width: 70%;
             overflow: hidden;
             max-height: 150px;
-
+            width: 90%;
         }
         .trailerBtn{
             margin-top: 50px;

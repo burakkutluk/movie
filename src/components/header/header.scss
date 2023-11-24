@@ -11,7 +11,7 @@
     transition: all ease 0.5s;
 
     &.shrink {
-        background: rgba(0, 0, 0, 0.159);
+        background: rgba(0, 0, 0, 0.733);
 
     }
 
@@ -133,18 +133,24 @@
     .navMenuItems {
         display: flex;
         flex-direction: column;
-        margin-top: 10px;
-        float: left;
-        width: 25%;
+        width: 100%;
+        position: absolute;
+        top: 54px;
         list-style: none;
+        background: rgba(0, 0, 0, 0.733);
+       
 
         .item {
             color: #ffffffe8;
             font-weight: 700;
             cursor: pointer;
-            width: 100%;
             padding: 20px;
+            width: 100%;
+            &:hover{
+                background: rgb(0, 0, 0);
+            }
         }
+       
     }
 
     .searchOpen{

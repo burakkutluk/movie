@@ -7,6 +7,7 @@ import Explore from './pages/explore/Explore'
 import Search from './pages/search/Search'
 import NotFound from './pages/404/notFound'
 import Details from './pages/Details/Details'
+import Footer from './components/footer/Footer'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/details/:category/:id" element={<Details />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter >
   )
 }

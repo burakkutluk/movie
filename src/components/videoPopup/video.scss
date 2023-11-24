@@ -9,7 +9,7 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
-    z-index: 1;
+    z-index: 9;
 
     .opacityLayer {
         position: absolute;
@@ -17,8 +17,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(3.5px);
+        background: rgba(0, 0, 0, 0.171);
+        backdrop-filter: blur(2.5px);
         -webkit-backdrop-filter: blur(3.5px);
         opacity: 0;
         transition: opacity 400ms;
@@ -31,6 +31,7 @@
         background-color: white;
         transform: scale(0.2);
         transition: transform 250ms;
+        z-index: 9;
 
         .closeBtn {
             position: absolute;
@@ -44,6 +45,7 @@
     &.visible {
         opacity: 1;
         visibility: visible;
+        z-index: 9;
 
         .opacityLayer {
             opacity: 1;

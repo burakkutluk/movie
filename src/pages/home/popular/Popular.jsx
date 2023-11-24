@@ -40,11 +40,11 @@ const Popular = () => {
     return (
         <div className='sliderSection'>
             <ContentWrapper>
-                <div className="title">Popular</div>
+                <div className="title1" >Popular</div>
 
                 <SwitchTabs />
 
-                <Slider movies={movies} mediaType={category}/>
+                <Slider movies={movies} mediaType={category.movie}/>
 
             </ContentWrapper>
         </div>

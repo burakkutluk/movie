@@ -9,6 +9,7 @@ import { AiFillStar } from 'react-icons/ai'
 
 const Slider = ({ movies, mediaType }) => {
 
+
   const navigate = useNavigate()
   const carouselContainer = useRef(null);
 
@@ -25,6 +26,8 @@ const Slider = ({ movies, mediaType }) => {
       behavior: "smooth",
     });
   };
+
+  
 
 
   return (
@@ -46,7 +49,7 @@ const Slider = ({ movies, mediaType }) => {
             <div className="sliderItem" key={movie.id} >
               <div className="sliderImg" onClick={() => navigate(`/details/${mediaType}/${movie.id}`)}>
                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
-                <div className='voteAverage'> <AiFillStar color='yellow' /> {movie.vote_average} / <span>10</span> </div>
+                <div className='voteAverage'> <AiFillStar color='yellow' /> {movie.vote_average} <span> / 10</span> </div>
               </div>
               <div className="sliderTitle">
                 {movie.title || movie.name}

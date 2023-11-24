@@ -19,7 +19,8 @@
             margin-top: 20px;
             flex-direction: column;
             width: 100%;
-
+            text-transform: capitalize;
+            color: rgba(240, 248, 255, 0.908);
             .cardItem {
                 width: 100%;
                 display: grid;

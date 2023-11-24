@@ -6,7 +6,6 @@
     justify-content: center;
 
     .title {
-        margin-top: 400px;
         text-transform: capitalize;
         margin-bottom: 10px;
 
@@ -99,6 +98,7 @@
                     object-fit: cover;
                     object-position: center;
                     border-radius: 15px;
+                    z-index: 0;
 
                     &:hover {
                         opacity: 0.3;

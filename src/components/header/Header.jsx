@@ -13,7 +13,7 @@ const Header = () => {
     const navigate = useNavigate();
     const [isResponsive, setIsResponsive] = useState(true);
     const { width } = useWindowSize(0)
- 
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [searchShow, setSearchShow] = useState(false);
     const [query, setQuery] = useState("");
@@ -21,6 +21,8 @@ const Header = () => {
     useEffect(() => {
         if (width <= 768) {
             setIsResponsive(false);
+            setIsMenuOpen(false);
+            setSearchShow(false);
         } else {
             setIsResponsive(true);
         }
@@ -44,13 +46,15 @@ const Header = () => {
     }, []);
 
     const handleSearch = (e) => {
-        if(query==""){
+        if (query == "") {
             e.preventDefault()
             return
-        }else{
+        } else {
             navigate(`/search/${query}`)
+            setIsMenuOpen(false)
+            setSearchShow(false)
         }
-        
+
         setQuery("")
     }
 
@@ -58,13 +62,18 @@ const Header = () => {
     const navigationHandler = (type) => {
         if (type == "movie") {
             navigate("/explore/movie")
+            setIsMenuOpen(false)
+            setSearchShow(false)
         } else {
             navigate("/explore/tv")
+            setIsMenuOpen(false)
+            setSearchShow(false)
         }
     }
 
     const menuHandler = () => {
         setIsMenuOpen(!isMenuOpen)
+        setSearchShow(false)
     }
 
     const searchHandler = () => {
@@ -105,12 +114,12 @@ const Header = () => {
                                 <div className="logo" onClick={() => navigate("/")}>
                                     <img src="src/assets/persona.jpg" alt="" />
                                 </div>
-                                {searchShow ?(
+                                {searchShow ? (
                                     <RxCross1 className='searchIcon' size={20} onClick={searchHandler} />
-                                ):(
-                                    <BsSearch className='searchIcon' size={20} onClick={searchHandler}  />
+                                ) : (
+                                    <BsSearch className='searchIcon' size={20} onClick={searchHandler} />
                                 )}
-                                
+
                             </div>
 
                         )}
@@ -138,7 +147,7 @@ const Header = () => {
             {searchShow && (
                 <form className="searchOpen" onSubmit={handleSearch}>
                     <input className='searchOpenInput' type="text" placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)} />
-                    <BsSearch className='searchIcon' size={18} onClick={handleSearch}/>
+                    <BsSearch className='searchIcon' size={18} onClick={handleSearch} />
                 </form>
             )}
         </div>

@@ -1,15 +1,29 @@
+@import '../../mixin.scss';
+
 .sliderSection {
     position: relative;
-    margin-bottom: 70px;
+    @include md{
+        margin-top: 50px;
+    }
+
     & > .contentWrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
     }
     .title {
+        margin-top: 70px;
         font-size: 24px;
         color: white;
         font-weight: normal;
+    }
+    .title1{
+        font-size: 24px;
+        color: white;
+        font-weight: normal;
+        margin-top: 350px;
+        @include md{
+            margin-top: 0;
+        }   
     }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import React from 'react'
-import apiFilter, { movieType, tvType } from '../../../api/apiFilter'
+import apiFilter, { category, movieType, tvType } from '../../../api/apiFilter'
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper'
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs'
 import Slider from '../../../components/slider/Slider'
@@ -45,7 +45,7 @@ const Latest = () => {
                 
                 <SwitchTabs />
 
-                <Slider movieType={movieType.latest} movies={movies} />
+                <Slider mediaType={category.movie} movies={movies} />
 
             </ContentWrapper>
         </div>
